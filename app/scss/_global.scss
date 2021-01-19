@@ -4,6 +4,10 @@ html {
 *, *::before, *::after {
     box-sizing: inherit;
 }
+
+// прибиваем футер
+// прибиваем футер
+
 a {
     display: inline-block;
     text-decoration: none;
@@ -22,6 +26,23 @@ body {
     font-size: 15px;
     line-height: 24px;
     color: $text;
+    overflow-x: hidden;
+}
+html,
+body {
+  height: 100%;
+  position: relative;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.content {
+  flex: 1 0 auto;
+}
+.footer {
+  flex: 0 0 auto;
 }
 .container {
     max-width: 1200px;
