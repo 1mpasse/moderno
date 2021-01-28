@@ -1472,6 +1472,40 @@ button.icon-unsorted {
   display: flex;
   justify-content: space-between;
   padding: 30px 0;
+  position: relative;
+  .jq-selectbox {
+    width: 100%;
+    width: 80px;
+  }
+  .jq-selectbox__select {
+    height: 30px;
+    padding: 0px 10px;
+    font-size: 13px;
+    border: 1px solid #d7d7d7;
+    border-bottom-color: #d7d7d7;
+    border-radius: 0px;
+    background: #f9f9f9;
+    box-shadow: none;
+    font: 13px/32px "Roboto-Regular", sans-serif;
+    font-weight: 400;
+    color: #70838d;
+    text-shadow: none;
+  }
+  .jq-selectbox__trigger {
+    border: none;
+  }
+  .jq-selectbox__trigger-arrow {
+    position: absolute;
+    border: none;
+    font-size: 13px;
+    top: 0px;
+    right: 15px;
+    &::before {
+      font-family: "icomoon", sans-serif;
+      content: "\f0d7";
+      color: $green;
+    }
+  }
 }
 .price__product {
   font-size: 22px;
@@ -1856,10 +1890,8 @@ button.icon-unsorted {
 }
 .page__box-content {
   padding: 30px 35px 80px;
-  position: relative;
   button {
-    position: absolute;
-    left: 258px + 35px;
+    margin-left: 258px;
     border: none;
     background-color: $green;
     color: #fff;
@@ -1897,6 +1929,39 @@ button.icon-unsorted {
     border: 1px solid #dedede;
     padding: 0 10px;
     color: #777777;
+  }
+  .jq-selectbox {
+    width: 100%;
+    max-width: 540px;
+  }
+  .jq-selectbox__select {
+    height: 40px;
+    padding: 0px 18px;
+    border: 1px solid #d7d7d7;
+    border-bottom-color: #d7d7d7;
+    border-radius: 0px;
+    background: #f9f9f9;
+    box-shadow: none;
+    font-family: "Roboto-Regular", sans-serif;
+    font-weight: 400;
+    line-height: 40px;
+    color: #707070;
+    text-shadow: none;
+  }
+  .jq-selectbox__trigger {
+    border: none;
+  }
+  .jq-selectbox__trigger-arrow {
+    border: none;
+    font-size: 15px;
+    top: 0px;
+    right: 20px;
+    line-height: 40px;
+    color: #444444;
+    &::before {
+      font-family: "icomoon", sans-serif;
+      content: "\f0d7";
+    }
   }
 }
 // end settings
@@ -2021,25 +2086,25 @@ button.icon-unsorted {
   }
 }
 .profile-settings {
-  .product-one__tabs.settings__tabs{
-   .tabs{ 
-     span{
-       font-family: 'Roboto', sans-serif !important;
-       font-weight: 500;
-       color: #707070;
-       position: relative;
-       &.active::before{
-         color: $green;
-       }
-       &::before{
-        font-family: "icomoon";
-        position: absolute;
-        left: 27px;
-        top: 15px;
-        color: #d0d0d0;
-        font-size: 14px;
-       }
-     }
+  .product-one__tabs.settings__tabs {
+    .tabs {
+      span {
+        font-family: "Roboto", sans-serif !important;
+        font-weight: 500;
+        color: #707070;
+        position: relative;
+        &.active::before {
+          color: $green;
+        }
+        &::before {
+          font-family: "icomoon";
+          position: absolute;
+          left: 27px;
+          top: 15px;
+          color: #d0d0d0;
+          font-size: 14px;
+        }
+      }
     }
   }
 }
@@ -2054,7 +2119,7 @@ button.icon-unsorted {
   font-size: 20px;
   color: $bg;
 }
-.personal-box__title.personal-box__title-skills{
+.personal-box__title.personal-box__title-skills {
   margin-bottom: 20px;
 }
 .personal-box__text {
@@ -2094,4 +2159,269 @@ button.icon-unsorted {
   }
 }
 // end profile
+// start upload
+.upload__inner {
+  background-color: #fff;
+  border: 1px solid #d7d7d7;
+  margin-bottom: 110px;
+  button {
+    color: #fff;
+    background-color: $green;
+    border: none;
+    padding: 15px 36px;
+    margin-left: 175px;
+  }
+}
+.upload__inner-title {
+  @include f500;
+  font-size: 24px;
+  padding: 16px 35px 18px;
+  color: $bg;
+  border-bottom: 1px solid #d7d7d7;
+  margin-bottom: 40px;
+}
+.upload__inner-content {
+  margin-bottom: 30px;
+  padding-left: 45px;
+  padding-right: 50px;
+}
+.upload-line {
+  display: flex;
+  margin-bottom: 25px;
+  label {
+    min-width: 175px;
+    padding-right: 15px;
+    padding-top: 5px;
+    color: #444;
+    span {
+      color: $green;
+    }
+  }
+  select,
+  input,
+  textarea {
+    width: 100%;
+    display: block;
+    border: 1px solid #d7d7d7;
+    height: 40px;
+    background-color: #f9f9f9;
+    padding: 0px 18px;
+    &::placeholder {
+      color: #707070;
+    }
+  }
+  textarea {
+    resize: none;
+    height: 150px;
+    padding: 8px 18px;
+  }
+  input[type="file"] {
+    outline: none;
+  }
+  .jq-file {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid #d7d7d7;
+    height: 40px;
+    background-color: #f9f9f9;
+  }
+  .jq-file__name {
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-bottom-color: transparent;
+    border-radius: 0px;
+    background: transparent;
+    box-shadow: none;
+    padding: 0px 18px;
+    font-size: 12px;
+    line-height: 40px;
+    color: #707070;
+    margin-left: 100px;
+  }
+  .jq-file__browse {
+    top: 5px;
+    right: auto;
+    left: 9px;
+    padding: 0 12px;
+    font-size: 12px;
+    line-height: 26px;
+    border: 1px solid #d7d7d7;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: none;
+    text-shadow: none;
+    color: #444;
+  }
+  .jq-selectbox {
+    width: 100%;
+  }
+  .jq-selectbox__select {
+    height: 40px;
+    padding: 0px 18px;
+    border: 1px solid #d7d7d7;
+    border-bottom-color: #d7d7d7;
+    border-radius: 0px;
+    background: #f9f9f9;
+    box-shadow: none;
+    font-family: "Roboto-Regular", sans-serif;
+    font-weight: 400;
+    line-height: 40px;
+    color: #707070;
+    text-shadow: none;
+  }
+  .jq-selectbox__trigger {
+    border: none;
+  }
+  .jq-selectbox__trigger-arrow {
+    border: none;
+    font-size: 15px;
+    top: 0px;
+    right: 20px;
+    line-height: 40px;
+    color: #444444;
+    &::before {
+      font-family: "icomoon", sans-serif;
+      content: "\f0d7";
+    }
+  }
+  .jq-selectbox__dropdown {
+    margin: 0;
+  }
+}
+
+// end upload
+// stard withdrawals
+.withdrawals__inner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 110px;
+}
+.withdrawals__col {
+  max-width: 570px;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #dedede;
+  height: 100%;
+}
+.withdrawals__title {
+  padding: 18px 32px 24px;
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 30px;
+  color: $bg;
+  @include f500;
+  font-size: 24px;
+}
+.withdrawals__content {
+  padding-left: 35px;
+  padding-right: 40px;
+  button {
+    margin-bottom: 50px;
+    color: #fff;
+    background-color: $green;
+    border: none;
+    padding: 15px 36px;
+  }
+}
+.withdrawal__form-line {
+  margin-bottom: 25px;
+  label {
+    display: block;
+    width: 100%;
+    @include f500;
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: $bg;
+    span {
+      color: $green;
+    }
+  }
+  input,
+  select {
+    width: 100%;
+    display: block;
+    border: 1px solid #d7d7d7;
+    height: 40px;
+    background-color: #f9f9f9;
+    padding: 0px 18px;
+    &::placeholder {
+      color: #707070;
+    }
+  }
+  .jq-selectbox {
+    width: 100%;
+  }
+  .jq-selectbox__select {
+    height: 40px;
+    padding: 0px 18px;
+    border: 1px solid #d7d7d7;
+    border-bottom-color: #d7d7d7;
+    border-radius: 0px;
+    background: #f9f9f9;
+    box-shadow: none;
+    font-family: "Roboto-Regular", sans-serif;
+    font-weight: 400;
+    line-height: 40px;
+    color: #707070;
+    text-shadow: none;
+  }
+  .jq-selectbox__trigger {
+    border: none;
+  }
+  .jq-selectbox__trigger-arrow {
+    border: none;
+    font-size: 15px;
+    top: 0px;
+    right: 20px;
+    line-height: 40px;
+    color: #444444;
+    &::before {
+      font-family: "icomoon", sans-serif;
+      content: "\f0d7";
+    }
+  }
+  .jq-selectbox__dropdown {
+    margin: 0;
+  }
+}
+.withdrawals__content {
+  padding-bottom: 35px;
+}
+.withdrawals__content-item {
+  display: flex;
+  height: 42px;
+  align-items: center;
+  font-size: 13px;
+  color: #444;
+  &:nth-child(odd){
+    background-color: #f9f9f9;
+  }
+}
+
+.withdrawals__content-date {
+  width: 154px;
+  padding-left: 20px;
+  @include f500;
+}
+.withdrawals__content-email {
+  width: 180px;
+  @include f500;
+}
+.withdrawals__content-price {
+  width: 70px;
+  @include f700;
+}
+.withdrawals__content-status {
+  width: 88px;
+  @include f700;
+  &.withdrawals__content-paid {
+    color: $green;
+  }
+}
+
+
+// end withdrawals
 @import "media";
