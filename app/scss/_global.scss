@@ -29,7 +29,7 @@ body {
   font-size: 15px;
   line-height: 24px;
   color: $text;
-  background-color: $grey;
+  background-color: #fff;
 }
 header{
   background-color: #fff;
@@ -79,6 +79,8 @@ header{
   background-color: #f4f6f5;
   &__inner {
     padding: 45px 0px 40px;
+    overflow: hidden;
+    width: 1200px;
   }
   &__list {
     li {
